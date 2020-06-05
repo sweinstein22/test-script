@@ -9,19 +9,21 @@ if [[ "$var" == "master" ]]; then
 
   read input
   if [[ "$input" == "y" || "$input" == "Y" ]]; then
-    # make
+   # make
     git push
   fi
   exit 0
 fi
 
-make
+#make
 git push
 printf "Do you want to merge this commit forward to master? [y/N]: "
 
 read input
 if [[ "$input" == "y" || "$input" == "Y" ]]; then
+  git rebase origin/master
   git checkout master
+  git pull -r
   git merge v7
   git push
 
