@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -ex
+set -e
 
 git pull -r
 
@@ -17,7 +17,7 @@ fi
 
 make
 git push
-printf "Do you want to merge this commit forward to master? [y/N]: "
+printf "Do you really want to merge this commit forward to master? [y/N]: "
 
 read input
 if [[ "$input" == "y" || "$input" == "Y" ]]; then
