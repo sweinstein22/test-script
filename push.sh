@@ -24,8 +24,8 @@ if [[ "$input" == "y" || "$input" == "Y" ]]; then
   git rebase origin/master
   git checkout master
   git pull -r
-  git merge v7
+  git merge v1100
   git push
 
-  git checkout v7
+  git checkout v1100
 fi
